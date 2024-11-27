@@ -35,9 +35,9 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="flex  gap-4">
+        <div className="lg:flex  gap-4">
           {/* First PricingBox */}
-          <div className="w-full md:w-full lg:w-1/2">
+          <div className="w-full md:w-full lg:w-1/2 mt-2">
             <PricingBox
               packageName="Lite"
               price={"49.99"}
@@ -60,7 +60,7 @@ const Pricing = () => {
           </div>
 
           {/* Second PricingBox */}
-          <div className="w-full md:w-full lg:w-1/2">
+          <div className="w-full md:w-full lg:w-1/2 mt-2">
             <PricingBox
               packageName="Plus"
               price={"199.99"}
