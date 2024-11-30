@@ -1,3 +1,7 @@
+'use client';
+
+// import { useRouter } from "next/router";
+
 const PricingBox = (props: {
   price: string;
   duration: string;
@@ -8,6 +12,11 @@ const PricingBox = (props: {
   title: string;
 }) => {
   const { price, duration, packageName, subtitle, children,buttonText,title } = props;
+  //  const router = typeof window !== 'undefined' ? useRouter() : null;
+
+  const handleNavigation = () => {
+    window.location.href = '/billing'; // Replace '/billing' with your desired route
+  };
 
   return (
     <div className="w-full">
@@ -28,7 +37,7 @@ const PricingBox = (props: {
           </h3>
         <p className="mb-7 text-base text-body-color text-center">{subtitle}</p>
         <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
-          <button className="flex w-full items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+          <button className="flex w-full items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp" onClick={handleNavigation}>
             {buttonText}
           </button>
         </div>
