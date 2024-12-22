@@ -11,7 +11,7 @@ const AboutHeadingSection = () => {
   return (
     <section
       ref={ref}
-      className={inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={inView ? "opacity-100 translate-y-0 mb-5" : "opacity-0 translate-y-10 mb-5"
       }>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center">

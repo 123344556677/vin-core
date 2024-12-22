@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
           <CursorAnimator />
+          <Toast/>
           <Header />
           {children}
           <Footer />
@@ -39,4 +40,5 @@ export default function RootLayout({
 import { Providers } from "./providers";
 import CursorAnimator from "@/components/Animations/AnimatedCursor";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
+import Toast from "@/components/Alerts/Toast";
 

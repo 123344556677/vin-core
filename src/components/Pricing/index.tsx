@@ -1,13 +1,44 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { getUser } from "@/app/api/api";
+import { UserDetails } from "@/types/auth";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
+  const [userData, setUserData] = useState<UserDetails>();
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        // Access localStorage inside useEffect
+        // const id = localStorage.getItem("id");
+        // console.log(id,"going id in api")
+
+        const response = await getUser();
+        console.log(response, "user response--->")
+        setUserData(response?.user);
+
+      } catch (error) {
+        console.error("Error fetching user information:", error);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
+  const disabled =
+  (userData?.subscriptionEndDate &&
+    new Date(userData.subscriptionEndDate) > new Date()) &&
+  (userData?.availableReports && userData.availableReports > 0);
+ 
+  console.log(disabled, "disabled value")
+
  
 
   return (
@@ -45,6 +76,8 @@ const Pricing = () => {
               subtitle="Get for One-time"
               buttonText="Get Report"
               title="Single Report"
+              disabled={disabled}
+              id={userData?._id}
             >
               <OfferList text="Ownership History" status="active" />
               <OfferList text="Vehicle Specifications" status="active" />
@@ -68,6 +101,8 @@ const Pricing = () => {
               subtitle="15 Reports a month"
               buttonText="Get Membership"
               title="Annual Membership"
+              disabled={disabled}
+              id={userData?._id}
             >
               <OfferList text="Ownership History" status="active" />
               <OfferList text="Vehicle Specifications" status="active" />

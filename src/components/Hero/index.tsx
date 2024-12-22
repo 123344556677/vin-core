@@ -1,7 +1,34 @@
+"use client";
+
 import Link from "next/link";
 import TextAnimator from "../Animations/TextAnimator";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { showToast } from "../Alerts/Toast";
+
 
 const Hero = () => {
+  const searchParams = useSearchParams();
+  const status = searchParams.get("status");
+  useEffect(() => {
+    if (status) {
+      if (status === "success") {
+        showToast({ message: "Transaction Successful", type: "success" });
+      } else if (status === "cancel") {
+        showToast({ message: "Transaction Failed", type: "error" });
+      } else if (status === "update") {
+        showToast({ message: "Information Updated Successfully", type: "success" });
+      }
+
+      // Remove `status` from the URL after a short delay
+      setTimeout(() => {
+        const params = new URLSearchParams(window.location.search);
+        params.delete("status");
+        const newUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+        window.history.replaceState(null, "", newUrl);
+      }, 2000); // Adjust delay time as needed
+    }
+  }, [status]);
   return (
     <>
       <section
