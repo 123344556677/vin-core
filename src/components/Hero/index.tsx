@@ -2,33 +2,37 @@
 
 import Link from "next/link";
 import TextAnimator from "../Animations/TextAnimator";
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { showToast } from "../Alerts/Toast";
 
 
 const Hero = () => {
-  const searchParams = useSearchParams();
-  const status = searchParams.get("status");
+  const [status, setStatus] = useState(null);
+  const router = useRouter();
+
   useEffect(() => {
-    if (status) {
-      if (status === "success") {
+    const params = new URLSearchParams(window.location.search);
+    const currentStatus = params.get("status");
+    setStatus(currentStatus);
+
+    if (currentStatus) {
+      if (currentStatus === "success") {
         showToast({ message: "Transaction Successful", type: "success" });
-      } else if (status === "cancel") {
+      } else if (currentStatus === "cancel") {
         showToast({ message: "Transaction Failed", type: "error" });
-      } else if (status === "update") {
+      } else if (currentStatus === "update") {
         showToast({ message: "Information Updated Successfully", type: "success" });
       }
 
-      // Remove `status` from the URL after a short delay
+      // Clear the status param after a short delay
       setTimeout(() => {
-        const params = new URLSearchParams(window.location.search);
         params.delete("status");
         const newUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
-        window.history.replaceState(null, "", newUrl);
-      }, 2000); // Adjust delay time as needed
+        router.replace(newUrl); // Pass a string URL
+      }, 2000);
     }
-  }, [status]);
+  }, [router]);
   return (
     <>
       <section
