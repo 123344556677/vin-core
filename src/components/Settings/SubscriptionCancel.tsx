@@ -24,7 +24,7 @@ const SubscriptionCancel = () => {
       <div className="max-w-3xl mx-auto border border-red-500 rounded-lg shadow-lg p-6 bg-white dark:bg-gray-800">
         <h2 className="text-2xl font-semibold text-red-600 dark:text-red-400 mb-4">Cancel Your Subscription</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-6">
-          We&apos;re sorry to see you go. By canceling your subscription, you&apos;ll lose access to premium features after your current billing cycle ends. If there&apos;s anything we can improve, let us know!
+          We are sorry to see you go. By canceling your subscription, you will lose access to premium features after your current billing cycle ends. If there is anything we can improve, let us know!
         </p>
         <div className="flex items-center justify-center">
           <button
