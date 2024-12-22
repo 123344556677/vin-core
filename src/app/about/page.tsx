@@ -31,8 +31,8 @@ const AboutPage = () => {
             <div>
               <h2 className="text-2xl font-semibold text-blue-400">Message from Our Founder</h2>
               <p className="mt-4 dark:text-gray-300 text-gray-900">
-                "Welcome to our platform! We are committed to providing you with the best experience and
-                unparalleled services. Thank you for being part of our journey."
+                Welcome to our platform! We are committed to providing you with the best experience and
+                unparalleled services. Thank you for being part of our journey.
               </p>
               <p className="mt-2 text-sm font-medium text-gray-400">- Bryan Muller, Founder</p>
             </div>
