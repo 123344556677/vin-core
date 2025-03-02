@@ -43,8 +43,8 @@ const Founder = () => {
           </h2>
           <div className="space-y-4 text-lg text-gray-600 dark:text-gray-300">
             <p className="border-l-4 border-blue-400 pl-4 italic">
-              "Welcome to our platform! We are committed to providing you with the best experience and
-              unparalleled services. Thank you for being part of our journey."
+              Welcome to our platform! We are committed to providing you with the best experience and
+              unparalleled services. Thank you for being part of our journey.
             </p>
             <div className="mt-6">
               <p className="text-xl font-semibold text-blue-500">Bryan Muller</p>
