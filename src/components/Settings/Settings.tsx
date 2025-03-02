@@ -136,8 +136,8 @@ const Settings = () => {
     </div>
     <div>
       {
-        userData?.subscription&&
-      <SubscriptionCancel/>
+      //   userData?.subscription&&
+      // <SubscriptionCancel/>
 }
     </div>
     </>

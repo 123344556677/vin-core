@@ -18,7 +18,7 @@ const Hero = () => {
 
     if (currentStatus) {
       if (currentStatus === "success") {
-        showToast({ message: "Transaction Successful", type: "success" });
+        showToast({ message: "Transaction Successful, You will get your report within 30 minutes on your e-mail.", type: "success" });
       } else if (currentStatus === "cancel") {
         showToast({ message: "Transaction Failed", type: "error" });
       } else if (currentStatus === "update") {
