@@ -9,6 +9,7 @@ import { showToast } from "../Alerts/Toast";
 
 const Hero = () => {
   const [status, setStatus] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -33,6 +34,11 @@ const Hero = () => {
       }, 2000);
     }
   }, [router]);
+  const handleNavigation = () => {
+    if (searchQuery.trim()) {
+      router.push(`/billing?plan=single&query=${searchQuery}`);
+    }
+  };
   return (
     <>
       <section
@@ -74,13 +80,17 @@ const Hero = () => {
                 {/* Search bar */}
                 <div className="flex justify-center">
                   <div className="relative w-[700px]">
-                    <input
-                      type="text"
-                      placeholder="Search for VIN here..."
-                      className="w-full rounded-lg border border-gray-300 bg-white px-6 py-4 pr-14 text-base text-body-color placeholder-gray-500 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                    />
+                  <input
+        type="text"
+        placeholder="Search for VIN here..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleNavigation()}
+        className="w-full rounded-lg border border-gray-300 bg-white px-6 py-4 pr-14 text-base text-body-color placeholder-gray-500 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+      />
                     <button
                       type="submit"
+                      onClick={handleNavigation}
                       className="absolute right-3 top-2 flex h-10 w-10 items-center justify-center rounded-md bg-primary text-white hover:bg-primary/80"
                     >
                       <svg
