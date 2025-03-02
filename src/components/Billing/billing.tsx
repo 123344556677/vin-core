@@ -27,7 +27,7 @@ const BillingInfo = () => {
     },
     paymentMethod: "Stripe",
     orderType: "",
-    amount: 200,
+    amount: 100,
   });
 
   const [selectedPayment, setSelectedPayment] = useState("Stripe");
@@ -159,8 +159,6 @@ const BillingInfo = () => {
                 selected={selectedPayment === "Stripe"}
                 onSelect={() => handlePaymentMethodChange("Stripe")}
               />
-              {
-                plan!=="annual"&&
               <PaymentCard
                 title="PayPal"
                 description="Pay using PayPal"
@@ -168,7 +166,6 @@ const BillingInfo = () => {
                 selected={selectedPayment === "PayPal"}
                 onSelect={() => handlePaymentMethodChange("PayPal")}
               />
-}
             </div>
 
             {/* Right Column */}

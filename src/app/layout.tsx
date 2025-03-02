@@ -30,7 +30,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ScrollToTop />
-          <WhatsAppButton/>
+          <ChatBot/>
         </Providers>
       </body>
     </html>
@@ -41,4 +41,5 @@ import { Providers } from "./providers";
 import CursorAnimator from "@/components/Animations/AnimatedCursor";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 import Toast from "@/components/Alerts/Toast";
+import ChatBot from "@/components/WhatsAppButton/WhatsAppButton";
 

@@ -53,20 +53,62 @@ const Pricing = () => {
           width="1200px"
         />
 
-        <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
-            <Image
-              src="/images/download-11.webp"
-              alt="NMVTIS"
-              width={200}
-              height={200}
-            // className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-            />
+<div className="w-full">
+  <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
+    <Image
+      src="/images/download-11.webp"
+      alt="NMVTIS"
+      width={200}
+      height={200}
+    />
+  </div>
+  
+  {/* Country Flags Section */}
+  <div className="flex justify-center items-center gap-4 mt-4">
+    <div className="relative w-8 h-6 md:w-12 md:h-8 hover:scale-110 transition-transform">
+      <Image
+        src="/images/hero/cannada.jpeg"
+        alt="Canada Flag"
+        fill
+        className="object-cover rounded-sm drop-shadow-md border border-gray-200 dark:border-gray-600"
+        sizes="(max-width: 768px) 32px, 48px"
+        quality={100}
+      />
+    </div>
+    <div className="relative w-8 h-6 md:w-12 md:h-8 hover:scale-110 transition-transform">
+      <Image
+        src="/images/hero/america.jpeg"
+        alt="USA Flag"
+        fill
+        className="object-cover rounded-sm drop-shadow-md border border-gray-200 dark:border-gray-600"
+        sizes="(max-width: 768px) 32px, 48px"
+        quality={100}
+      />
+    </div>
+    <div className="relative w-8 h-6 md:w-12 md:h-8 hover:scale-110 transition-transform">
+      <Image
+        src="/images/hero/uk.jpeg"
+        alt="UK Flag"
+        fill
+        className="object-cover rounded-sm drop-shadow-md border border-gray-200 dark:border-gray-600"
+        sizes="(max-width: 768px) 32px, 48px"
+        quality={100}
+      />
+    </div>
+    <div className="relative w-8 h-6 md:w-12 md:h-8 hover:scale-110 transition-transform">
+      <Image
+        src="/images/hero/australia.jpeg"
+        alt="Australia Flag"
+        fill
+        className="object-cover rounded-sm drop-shadow-md border border-gray-200 dark:border-gray-600"
+        sizes="(max-width: 768px) 32px, 48px"
+        quality={100}
+      />
+    </div>
+  </div>
+</div>
 
-          </div>
-        </div>
-
-        <div className="lg:flex  gap-4">
+        <div className="lg:flex  gap-4 mt-8 md:mt-12">
           {/* First PricingBox */}
           <div className="w-full md:w-full lg:w-1/2 mt-2">
             <PricingBox
@@ -96,7 +138,7 @@ const Pricing = () => {
           <div className="w-full md:w-full lg:w-1/2 mt-2">
             <PricingBox
               packageName="Plus"
-              price={"199.99"}
+              price={"99.99"}
               duration={"yr"}
               subtitle="15 Reports a month"
               buttonText="Get Membership"
@@ -117,7 +159,29 @@ const Pricing = () => {
             </PricingBox>
           </div>
         </div>
-
+{/* Add this right after the pricing containers div */}
+<div className="mt-12 flex justify-center">
+  <button
+    type="button"
+    className="flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 dark:from-blue-700 dark:to-blue-900 dark:focus:ring-offset-gray-900"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+    Search Your VIN 
+  </button>
+</div>
 
       </div>
 
