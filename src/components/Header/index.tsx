@@ -7,7 +7,7 @@ import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { getUser } from "@/app/api/api";
 import { UserDetails } from "@/types/auth";
-import { FiFileText, FiLogOut, FiSettings } from "react-icons/fi";
+import { FiFileText, FiLogOut, FiSettings,FiList  } from "react-icons/fi";
 
 const Header = () => {
   // Navbar toggle
@@ -233,6 +233,16 @@ const Header = () => {
                                 </button>
                                 <hr className="border-t border-gray-200" />
                               </li>
+                              <li className="group py-2">
+  <button
+    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition"
+    onClick={() => (window.location.href = "/orders")}
+  >
+    <FiList className="mr-2 text-gray-400 group-hover:text-blue-600" />
+    Orders
+  </button>
+  <hr className="border-t border-gray-200" />
+</li>
                                <li className="group py-2">
                                 <button
                                   className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition"
@@ -424,6 +434,16 @@ const Header = () => {
                                 </button>
                                 <hr className="border-t border-gray-200" />
                               </li>
+                              <li className="group py-2">
+  <button
+    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition"
+    onClick={() => (window.location.href = "/orders")}
+  >
+    <FiList className="mr-2 text-gray-400 group-hover:text-blue-600" />
+    Orders
+  </button>
+  <hr className="border-t border-gray-200" />
+</li>
                                <li className="group py-2">
                                 <button
                                   className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition"

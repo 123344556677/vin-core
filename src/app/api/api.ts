@@ -24,7 +24,15 @@ export const stripeSingleOrder = async (orderId) => {
     throw error;
   }
 };
-
+export const getOrderByuserid= async (userId) => {
+  try {
+    const response = await apiInstance.get(`/order/getOrdersOfUser/${userId}`); // Replace with your endpoint
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching single stripe payment details:', error);
+    throw error;
+  }
+};
 export const onCancelSubscription = async () => {
   try {
     const response = await apiInstance.get('/payment/customers'); // Replace with your endpoint
