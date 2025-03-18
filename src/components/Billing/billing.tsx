@@ -25,12 +25,12 @@ const BillingInfo = () => {
       city: "",
       zipCode: "",
     },
-    paymentMethod: "Stripe",
+    paymentMethod: "PayPal",
     orderType: "",
     amount: 100,
   });
 
-  const [selectedPayment, setSelectedPayment] = useState("Stripe");
+  const [selectedPayment, setSelectedPayment] = useState("PayPal");
   const [ordderId, setOrderId] = useState<string>("");
   const countries = Country.getAllCountries();
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -152,13 +152,13 @@ const BillingInfo = () => {
             {/* Left Column */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Select Payment Method</h2>
-              <PaymentCard
+              {/* <PaymentCard
                 title="Stripe"
                 description="Pay securely with Stripe"
                 icon="💳"
                 selected={selectedPayment === "Stripe"}
                 onSelect={() => handlePaymentMethodChange("Stripe")}
-              />
+              /> */}
               <PaymentCard
                 title="PayPal"
                 description="Pay using PayPal"

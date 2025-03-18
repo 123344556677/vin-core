@@ -83,7 +83,7 @@ const SignIn = () => {
           />
         </div>
         <div className="mb-8 flex flex-col justify-between sm:flex-row sm:items-center">
-          <div className="mb-4 sm:mb-0">
+          {/* <div className="mb-4 sm:mb-0">
             <label
               htmlFor="checkboxLabel"
               className="flex cursor-pointer select-none items-center text-sm font-medium text-body-color"
@@ -116,7 +116,7 @@ const SignIn = () => {
               </div>
               Keep me signed in
             </label>
-          </div>
+          </div> */}
           <div>
             <a
               href="#0"

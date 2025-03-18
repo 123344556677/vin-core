@@ -118,7 +118,7 @@ const Pricing = () => {
               subtitle="Get for One-time"
               buttonText="Get Report"
               title="Single Report"
-              disabled={disabled}
+              disabled={disabled===true?true:false}
               id={userData?._id}
             >
               <OfferList text="Ownership History" status="active" />
@@ -143,7 +143,7 @@ const Pricing = () => {
               subtitle="15 Reports a month"
               buttonText="Get Membership"
               title="Annual Membership"
-              disabled={disabled}
+              disabled={disabled===true?true:false}
               id={userData?._id}
             >
               <OfferList text="Ownership History" status="active" />
